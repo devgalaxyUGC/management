@@ -5,11 +5,11 @@ import jakarta.persistence.EntityManager;
 
 import java.util.List;
 
-public class IStudentRepository implements IEntityGeneric<Student>{
+public class StudentRepositoryImpl implements IEntityGeneric<Student>{
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
-    public IStudentRepository(EntityManager entityManager) {
+    public StudentRepositoryImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
@@ -39,4 +39,6 @@ public class IStudentRepository implements IEntityGeneric<Student>{
         Student studentMerged = entityManager.merge(studentReferenced);
         entityManager.remove(studentMerged);
     }
+
+    // TEntity create(String nome, String email);
 }

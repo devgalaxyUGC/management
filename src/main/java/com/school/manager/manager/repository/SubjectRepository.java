@@ -3,11 +3,11 @@ package com.school.manager.manager.repository;
 import com.school.manager.manager.entity.Subject;
 import jakarta.persistence.EntityManager;
 
-public class ISubjectRepository implements IEntityGeneric<Subject> {
+public class SubjectRepository implements IEntityGeneric<Subject> {
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
-    public ISubjectRepository(EntityManager entityManager) {
+    public SubjectRepository(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 

@@ -2,8 +2,8 @@ package com.school.manager.manager.services;
 
 import com.school.manager.manager.entity.Student;
 import com.school.manager.manager.entity.Subject;
-import com.school.manager.manager.repository.IStudentRepository;
-import com.school.manager.manager.repository.ISubjectRepository;
+import com.school.manager.manager.repository.StudentRepositoryImpl;
+import com.school.manager.manager.repository.SubjectRepository;
 import com.school.manager.manager.utility.JPAUtil;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.Test;
@@ -21,8 +21,8 @@ class InsertStudentTest {
         Student.listOfStudents.add(student);
         Subject.listOfSubjects.add(computerScience);
 
-        ISubjectRepository subjectDAO = new ISubjectRepository(entityManager);
-        IStudentRepository studentDAO = new IStudentRepository(entityManager);
+        SubjectRepository subjectDAO = new SubjectRepository(entityManager);
+        StudentRepositoryImpl studentDAO = new StudentRepositoryImpl(entityManager);
 
         entityManager.getTransaction().begin();
 
